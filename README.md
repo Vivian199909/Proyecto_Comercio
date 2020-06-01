@@ -1,3 +1,4 @@
 Proyecto_Comercio
 
-Hola chicos
+Proyecto de comercio electrónico basada en una libreria.
+El presente proyecto es desarrollado en Angular
