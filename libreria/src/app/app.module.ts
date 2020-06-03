@@ -10,6 +10,7 @@ import { RegistroModule } from './registro/registro.module';
 import { CrearComponent } from './perfil/crear/crear.component';
 import { EditarComponent } from './perfil/editar/editar.component';
 import { ListarComponent } from './perfil/listar/listar.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ListarComponent } from './perfil/listar/listar.component';
     RegistroModule,
     CrearComponent,
     EditarComponent,
-    ListarComponent
+    ListarComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
