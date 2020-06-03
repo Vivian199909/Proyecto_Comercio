@@ -7,6 +7,9 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
 import { RegistroComponent } from './registro/registro.component';
+import { CrearComponent } from './perfil/crear/crear.component';
+import { EditarComponent } from './perfil/editar/editar.component';
+import { ListarComponent } from './perfil/listar/listar.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { RegistroComponent } from './registro/registro.component';
     HomeComponent,
     LoginComponent,
     NoEncontradoComponent,
-    RegistroComponent
+    RegistroComponent,
+    CrearComponent,
+    EditarComponent,
+    ListarComponent
   ],
   imports: [
     BrowserModule,
