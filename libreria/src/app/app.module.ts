@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutes } from './app.routes';
+import { AppRoutesComponent } from './app.routes';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -18,7 +18,6 @@ import { MenuComponent } from './menu/menu.component';
     HomeComponent,
     LoginComponent,
     NoEncontradoComponent,
-    RegistroModule,
     CrearComponent,
     EditarComponent,
     ListarComponent,
@@ -26,7 +25,8 @@ import { MenuComponent } from './menu/menu.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutes
+    AppRoutesComponent,
+    RegistroModule
   ],
   providers: [],
   bootstrap: [AppComponent]
