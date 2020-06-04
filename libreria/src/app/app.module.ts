@@ -8,6 +8,9 @@ import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
 import { RegistroModule } from './registro/registro.module';
 import { MenuComponent } from './menu/menu.component';
 import { PerfilModule } from './perfil/perfil.module';
+import { HttpClientModule } from "@angular/common/http";
+import { LoginService } from './services/login.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,9 +23,12 @@ import { PerfilModule } from './perfil/perfil.module';
     BrowserModule,
     AppRoutesComponent,
     RegistroModule,
-    PerfilModule
+    PerfilModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    LoginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
