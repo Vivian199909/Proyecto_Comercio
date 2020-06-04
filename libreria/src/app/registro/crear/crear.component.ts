@@ -41,4 +41,14 @@ export class CrearComponent implements OnInit {
     )
   }
 
+  obtenerFormulario(formulario) {
+    console.log(formulario);
+    /* alert(
+      'correo: ' +
+        formulario.controls.email.value +
+        'password: ' +
+        formulario.controls.pass.value
+    ); */
+  }
+
 }

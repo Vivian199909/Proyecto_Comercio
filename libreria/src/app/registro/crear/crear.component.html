@@ -29,7 +29,7 @@
                     <div class="search_background" style="background-image:url(assets/images/search_background.jpg);"></div>
                     <div class="search_content text-center">
                         <h1 class="search_title registro">REGISTRARSE</h1>
-                        <form id="search_form" class="search_form" action="post">
+                        <form id="search_form" class="search_form" (ngSubmit)="obtenerFormulario(formularioUsuario)" #formularioUsuario="ngForm">
                           <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Nro de cédula" required="required" data-error="Cédula obligatoria.">
                           <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Nombres" required="required" data-error="Nombres obligatorio.">
                           <input id="search_form_category" class="input_field search_form_category" type="text" placeholder="Apellidos" required="required" data-error="Apellidos obligatorio.">
