@@ -24,9 +24,8 @@ export class LoginService {
     }
 
     crearCredenciales(datosCredencialesCrear){
-        const url = 'http://localhost:1337/registro'
+        const url = 'http://localhost:1337/registro';
         return this._httpClient.post(url,datosCredencialesCrear);
     }
 
     }
-    

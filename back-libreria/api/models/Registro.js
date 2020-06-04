@@ -10,14 +10,13 @@ module.exports = {
   attributes: {
 
     cedula:{
-      type:'string',
-      required: true
+      type:'string'
     },
     nombres:{
       type:'string'
     },
     apellidos:{
-      type:'string',
+      type:'string'
     },
     direccion:{
       type:'string'
@@ -38,8 +37,8 @@ module.exports = {
       collection:'ingreso',
       via:'idRegistro'
     }
-    
-    
+
+
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝

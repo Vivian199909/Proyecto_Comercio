@@ -23,14 +23,15 @@ export class CrearComponent implements OnInit {
   }
   ingresar(){
     this._loginService.crearCredenciales({
+      cedula:'123456789',
       nombres:'vivian barbara',
       apellidos:'lopez tipan' ,
       direccion:'villas aurora',
       correo:'vtipan19@hotmail.com',
       telefono1:'0995411078',
       telefono2:'2295204',
-      pass:'vivian-19',
-      idPerfil:'1'
+      //pass:'vivian-19',
+      idPerfil:1
     }).subscribe(
       (registroCreado)=>{
         console.log('registroCreado');
