@@ -8,9 +8,19 @@ const rutas: Routes=[
         component: HomeComponent,
     },
     {
+        path:"",
+        redirectTo:'inicio',
+        pathMatch:'full',
+    },
+    {
       path: 'registro',
       loadChildren: ()=>import('./registro/registro.module')
       .then(registro=>registro.RegistroModule)
+    },
+    {
+      path: 'perfil',
+      loadChildren: ()=>import('./perfil/perfil.module')
+      .then(perfil=>perfil.PerfilModule)
     },
 ]
 @NgModule({

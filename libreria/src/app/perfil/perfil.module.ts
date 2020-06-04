@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RegistroRoutingModule } from './registro-routing.module';
+import { PerfilRoutingModule } from './perfil-routing.module';
 import { ListarComponent } from './listar/listar.component';
 import { CrearComponent } from './crear/crear.component';
 import { EditarComponent } from './editar/editar.component';
@@ -10,7 +10,7 @@ import { EditarComponent } from './editar/editar.component';
   declarations: [ListarComponent, CrearComponent, EditarComponent],
   imports: [
     CommonModule,
-    RegistroRoutingModule
+    PerfilRoutingModule
   ]
 })
-export class RegistroModule {}
+export class PerfilModule {}
