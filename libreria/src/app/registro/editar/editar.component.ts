@@ -20,6 +20,7 @@ export class EditarComponent implements OnInit {
   passr='';
   idPerfil='';
   idRegistro='';
+  idIngreso='';
   constructor(
     private readonly _loginService: LoginService,
     private readonly _activatedRoute: ActivatedRoute
@@ -28,21 +29,33 @@ export class EditarComponent implements OnInit {
   ngOnInit(): void {
     this._activatedRoute.paramMap.subscribe(
       (resultadoParametros)=>{
-        console.log(resultadoParametros);
-        this.idRegistro= (JSON.stringify(resultadoParametros['params']['id'])).replace('/"/g','');
-        alert(this.idRegistro);
+        /* console.log(resultadoParametros); */
+        this.idRegistro= (JSON.stringify(resultadoParametros['params']['id'])).replace(/"/g,'');
+       /*  alert(this.idRegistro); */
         this._loginService
         .metodoGet('http://localhost:1337/registro/'+ this.idRegistro)
         .subscribe((resultadoMetodoGet)=>{
           console.log('respuesta de get');
           console.log(resultadoMetodoGet);
+          this.cedula=resultadoMetodoGet['cedula'];
+          this.nombres=resultadoMetodoGet['nombres'];
+          this.apellidos=resultadoMetodoGet['apellidos'];
+          this.direccion=resultadoMetodoGet['direccion'];
+          this.correo=resultadoMetodoGet['correo'];
+          this.telefono1=resultadoMetodoGet['telefono1'];
+          this.telefono2=resultadoMetodoGet['telefono2'];
+          this.idRegistro=resultadoMetodoGet['id'];
+          this.usuario=resultadoMetodoGet['ingresos']['0']['usuario'];
+          this.pass=resultadoMetodoGet['ingresos']['0']['clave'];
+          this.idIngreso=resultadoMetodoGet['ingresos']['0']['id'];
         })
+        
       }
     )
 
   }
   ingresar(){
-    this._loginService.editarRegistro({
+    this._loginService.metodoPut('http://localhost:1337/registro/'+ this.idRegistro,{
       cedula:this.cedula,
       nombres:this.nombres,
       apellidos:this.apellidos ,
@@ -50,7 +63,8 @@ export class EditarComponent implements OnInit {
       correo:this.correo,
       telefono1:this.telefono1,
       telefono2:this.telefono2,
-      //pass:'vivian-19',
+      usuario:this.usuario,
+      clave:this.pass,
       idPerfil:1
     }).subscribe(
       (registroCreado)=>{
@@ -61,7 +75,7 @@ export class EditarComponent implements OnInit {
         this.idRegistro=JSON.stringify(registroCreado['id']);
       }
     )
-    this._loginService.editarCredenciales({
+    this._loginService.metodoPut('http://localhost:1337/ingreso/'+ this.idIngreso,{
       usuario:this.usuario,
       clave:this.pass,
       idRegitro: this.idRegistro

@@ -16,7 +16,7 @@ export class LoginService {
     }
 
     metodoPut(url: string, dataEditar){
-        return this._httpClient.post(url,dataEditar);
+        return this._httpClient.put(url,dataEditar);
     }
 
     metodoDelete(url: string){

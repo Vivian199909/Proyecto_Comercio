@@ -1,87 +1,284 @@
-<!-- Register -->
+    <!-- Register -->
 
-<div class="register">
+    <div class="register">
 
-    <div class="container-fluid">
+        <div class="container-fluid">
 
-        <div class="row row-eq-height">
-            <div class="col-lg-6 nopadding">
+            <div class="row row-eq-height">
+                <div class="col-lg-6 nopadding">
 
-                <!-- Register -->
+                    <!-- Register -->
 
-                <div class="register_section d-flex flex-column align-items-center justify-content-center">
+                    <div class="register_section d-flex flex-column align-items-center justify-content-center">
 
-                    <div class="register_content text-center">
-                        <h1 class="register_title"><span></span> </h1>
-                        <p class="register_text"></p>
-                        <img class='fondoRegistro' src="assets/images/gatoBook.jpg" alt="">
+                        <div class="register_content text-center">
+                            <h1 class="register_title"><span></span> </h1>
+                            <p class="register_text"></p>
+                            <img class='fondoRegistro' src="assets/images/gatoBook.jpg" alt="">
 
+                        </div>
                     </div>
+
                 </div>
 
-            </div>
+                <div class="col-lg-6 nopadding">
 
-            <div class="col-lg-6 nopadding">
+                    <!-- Search -->
 
-                <!-- Search -->
-
-                <div class="search_section d-flex flex-column align-items-center justify-content-center">
-                    <div class="search_background" style="background-image:url(assets/images/search_background.jpg);"></div>
-                    <div class="search_content text-center">
-                        <h1 class="search_title registro">REGISTRARSE</h1>
-                        <form id="search_form" class="search_form" (ngSubmit)="obtenerFormulario(formularioUsuario)" #formularioUsuario="ngForm">
+                    <div class="search_section d-flex flex-column align-items-center justify-content-center">
+                        <div class="search_background" style="background-image:url(assets/images/search_background.jpg);"></div>
+                        <div class="search_content text-center">
+                            <h1 class="search_title registro">REGISTRARSE</h1>
+                            <form id="search_form" class="search_form" (ngSubmit)="obtenerFormulario(formularioUsuario)" #formularioUsuario="ngForm">
+                                
+                                <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Nro de cédula" required="required" data-error="Cédula obligatoria." 
+                                [(ngModel)]="cedula"
+                                name="cedula"
+                                pattern="^[0-9]+$"
+                                maxlength='10'
+                                minlength="10"
+                                #campoCedula="ngModel">
+                                <div
+                                class="alert alert-danger"
+                                role="alert"
+                                *ngIf="(campoCedula.errors)
+                                && campoCedula.dirty === true">
+                                <p
+                                *ngIf="campoCedula.errors.required">
+                                    Campo cedula requerido
+                                </p>
+                                <p
+                                *ngIf="campoCedula.errors.minlength">
+                                    Error ingrese mínimo 10 dígitos
+                                </p>
+                                <p
+                                *ngIf="campoCedula.errors.pattern">
+                                    No es cedula
+                                </p>
                             
-                            <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Nro de cédula" required="required" data-error="Cédula obligatoria." 
-                            [(ngModel)]="cedula"
-                            name="cedula"
-                            minlength="10"
-                            #campoCedula="ngModel">
-                            <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Nombres" required="required" data-error="Nombres obligatorio."
-                            [(ngModel)]="nombres"
-                            name="nombres"
-                            minlength="3"
-                            #campoNombres="ngModel">
-                            <input id="search_form_category" class="input_field search_form_category" type="text" placeholder="Apellidos" required="required" data-error="Apellidos obligatorio."
-                            [(ngModel)]="apellidos"
-                            name="apellidos"
-                            minlength="3"
-                            #campoApellido="ngModel">
-                            <input id="search_form_degree" class="input_field search_form_degree" type="text" placeholder="Dirección" required="required" data-error="Dirección obligatorio."
-                            [(ngModel)]="direccion"
-                            name="direccion"
-                            minlength="3"
-                            #campoDireccion="ngModel">
-                            <input id="search_form_name" class="input_field search_form_name" type="email" placeholder="Correo" required="required" data-error="Correo obligatorio."
-                            [(ngModel)]="correo"
-                            name="correo"
-                            minlength="3"
-                            #campoCorreo="ngModel">
-                            <input id="search_form_category" class="input_field search_form_category" type="text" placeholder="Número de Celular" required="required" data-error="Celular olbigatorio."
-                            [(ngModel)]="telefono1"
-                            name="telefono1"
-                            minlength="3"
-                            #campoCelular="ngModel">
-                            <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Número Convencional" required="required" data-error="Teléfono convencional obligatorio."
-                            [(ngModel)]="telefono2"
-                            name="telefono2"
-                            minlength="3"
-                            #campoConvencional="ngModel">
-                            <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Usuario" required="required" data-error="Es obligatorio el usuario." 
-                            [(ngModel)]="usuario"
-                            name="usuario"
-                            minlength="10"
-                            #campoUsuario="ngModel">
+                                </div>
+                                <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Nombres" required="required" data-error="Nombres obligatorio."
+                                [(ngModel)]="nombres"
+                                name="nombres"
+                                pattern="^[a-zA-Z]+$"
+                                minlength="3"
+                                #campoNombres="ngModel">
+                                <div
+                                class="alert alert-danger"
+                                role="alert"
+                                *ngIf="(campoNombres.errors)
+                                && campoNombres.dirty === true">
+                                <p
+                                *ngIf="campoNombres.errors.required">
+                                    Campo nombre requerido
+                                </p>
+                                <p
+                                *ngIf="campoNombres.errors.minlength">
+                                    Error ingrese mínimo 10 dígitos
+                                </p>
+                                <p
+                                *ngIf="campoNombres.errors.pattern">
+                                    No es nombre
+                                </p>
+                            
+                                </div>
+                                <input id="search_form_category" class="input_field search_form_category" type="text" placeholder="Apellidos" required="required" data-error="Apellidos obligatorio."
+                                [(ngModel)]="apellidos"
+                                name="apellidos"
+                                pattern="^[a-zA-Z]+$"
+                                minlength="3"
+                                #campoApellido="ngModel">
+                                <div
+                                class="alert alert-danger"
+                                role="alert"
+                                *ngIf="(campoApellido.errors)
+                                && campoApellido.dirty === true">
+                                <p
+                                *ngIf="campoApellido.errors.required">
+                                    Campo apellido requerido
+                                </p>
+                                <p
+                                *ngIf="campoApellido.errors.minlength">
+                                    Error ingrese mínimo 10 dígitos
+                                </p>
+                                <p
+                                *ngIf="campoApellido.errors.pattern">
+                                    No es apellido
+                                </p>
+                            
+                                </div>
+                                <input id="search_form_degree" class="input_field search_form_degree" type="text" placeholder="Dirección" required="required" data-error="Dirección obligatorio."
+                                [(ngModel)]="direccion"
+                                name="direccion"
+                                minlength="3"
+                                maxlength="50"
+                                #campoDireccion="ngModel">
+
+                                <div
+                                class="alert alert-danger"
+                                role="alert"
+                                *ngIf="(campoDireccion.errors)
+                                && campoDireccion.dirty === true">
+                                <p
+                                *ngIf="campoDireccion.errors.required">
+                                    Campo direccion requerido
+                                </p>
+                                <p
+                                *ngIf="campoDireccion.errors.minlength">
+                                    Error ingrese mínimo 10 dígitos
+                                </p>
+                                <p
+                                *ngIf="campoDireccion.errors.pattern">
+                                    No es direccion
+                                </p>
+                            
+                                </div>
+                                <input id="search_form_name" class="input_field search_form_name" type="email" placeholder="Correo" required="required" data-error="Correo obligatorio."
+                                [(ngModel)]="correo"
+                                name="correo"
+                                minlength="3"
+                                maxlength="50"
+                                pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+                                #campoCorreo="ngModel">
+                                <div
+                                class="alert alert-danger"
+                                role="alert"
+                                *ngIf="(campoCorreo.errors)
+                                && campoCorreo.dirty === true">
+                                <p
+                                *ngIf="campoCorreo.errors.required">
+                                    Campo correo requerido
+                                </p>
+                                <p
+                                *ngIf="campoCorreo.errors.minlength">
+                                    Error ingrese mínimo 10 dígitos
+                                </p>
+                                <p
+                                *ngIf="campoCorreo.errors.pattern">
+                                    No es correo
+                                </p>
+                            
+                                </div>
+                                <input id="search_form_category" class="input_field search_form_category" type="text" placeholder="Número de Celular" required="required" data-error="Celular olbigatorio."
+                                [(ngModel)]="telefono1"
+                                name="telefono1"
+                                minlength="10"
+                                maxlength="10"
+                                pattern="^[0-9]+$"
+                                #campoCelular="ngModel">
+                                <div
+                                class="alert alert-danger"
+                                role="alert"
+                                *ngIf="(campoCelular.errors)
+                                && campoCelular.dirty === true">
+                                <p
+                                *ngIf="campoCelular.errors.required">
+                                    Campo celular requerido
+                                </p>
+                                <p
+                                *ngIf="campoCelular.errors.minlength">
+                                    Error ingrese mínimo 10 dígitos
+                                </p> 
+                                <p
+                                *ngIf="campoCelular.errors.pattern">
+                                    No es celular
+                                </p>
+                            
+                                </div>
+                                <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Número Convencional" required="required" data-error="Teléfono convencional obligatorio."
+                                [(ngModel)]="telefono2"
+                                name="telefono2"
+                                minlength="9"
+                                maxlength="9"
+                                pattern="^[0-9]+$"
+                                #campoConvencional="ngModel">
+                                <div
+                                class="alert alert-danger"
+                                role="alert"
+                                *ngIf="(campoConvencional.errors)
+                                && campoConvencional.dirty === true">
+                                <p
+                                *ngIf="campoConvencional.errors.required">
+                                    Campo numero convencional requerido
+                                </p>
+                                <p
+                                *ngIf="campoConvencional.errors.minlength">
+                                    Error ingrese mínimo 10 dígitos
+                                </p>
+                                <p
+                                *ngIf="campoConvencional.errors.pattern">
+                                    No es numero convencional 
+                                </p>
+                            
+                                </div>
+                                <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Usuario" required="required" data-error="Es obligatorio el usuario." 
+                                [(ngModel)]="usuario"
+                                name="usuario"
+                                minlength="4"
+                                maxlength="15"
+                                #campoUsuario="ngModel">
+                                <div
+                                class="alert alert-danger"
+                                role="alert"
+                                *ngIf="(campoUsuario.errors)
+                                && campoUsuario.dirty === true">
+                                <p
+                                *ngIf="campoUsuario.errors.required">
+                                    Campo usuario requerido
+                                </p>
+                                <p
+                                *ngIf="campoUsuario.errors.minlength">
+                                    Error ingrese mínimo 10 dígitos
+                                </p>
+                                <p
+                                *ngIf="campoUsuario.errors.pattern">
+                                    No es usuraio
+                                    </p>
+                        
+                            </div>
                             <input id="search_form_category" class="input_field search_form_category" type="password" placeholder="Contraseña"required="required" data-error="Contrasenia obligatorio."
                             [(ngModel)]="pass"
                             name="pass"
                             minlength="3"
+                            maxlength="15"
                             #campoContrasenia="ngModel">
+                            <div
+                            class="alert alert-danger"
+                            role="alert"
+                            *ngIf="(campoContrasenia.errors)
+                            && campoContrasenia.dirty === true">
+                                <p
+                              *ngIf="campoContrasenia.errors.required">
+                                Campo contasenia requerido
+                                </p>
+                                <p
+                              *ngIf="campoContrasenia.errors.minlength">
+                                Error ingrese mínimo 10 dígitos
+                                </p>
+                                <p
+                              *ngIf="campoContrasenia.errors.pattern">
+                                No es contrasenia
+                                </p>
+                        
+                            </div>
                             <input id="search_form_category" class="input_field search_form_category" type="password" placeholder="Repetir la Contraseña"required="required" data-error="Contrasenia obligatorio."
                             [(ngModel)]="passr"
                             name="pass"
                             minlength="3"
                             #campoRContrasenia="ngModel">
-                            <button id="search_submit_button" type="submit" class="search_submit_button trans_200" value="Submit" (click)='ingresar()'>REGISTRARSE</button>
+                            <div
+                            class="alert alert-danger"
+                            role="alert"
+                            *ngIf="(campoContrasenia.value!=='')
+                            &&(campoRContrasenia.value!=='')
+                            &&(campoContrasenia.value!==campoRContrasenia.value)">
+                                <p>
+                                Las contraseñas no son iguales
+                                </p>
+                        
+                        
+                            </div>
+                            <button id="search_submit_button" type="submit" class="search_submit_button trans_200" value="Submit"[disabled]="formularioUsuario.invalid" (click)='ingresar()'>REGISTRARSE</button>
                         </form>
                     </div>
                 </div>

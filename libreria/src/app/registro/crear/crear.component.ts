@@ -44,19 +44,21 @@ export class CrearComponent implements OnInit {
         alert(JSON.stringify(registroCreado['id']));
         
         this.idRegistro=JSON.stringify(registroCreado['id']);
+        alert(this.idRegistro)
+        this._loginService.crearCredenciales({
+          usuario:this.usuario,
+          clave:this.pass,
+          idRegistro: this.idRegistro+''
+        }).subscribe(
+          (registroCreado)=>{
+            console.log('registroCreado');
+            console.log(registroCreado);
+            alert(JSON.stringify(registroCreado));
+          }
+        )
       }
     )
-    this._loginService.crearCredenciales({
-      usuario:this.usuario,
-      clave:this.pass,
-      idRegitro: this.idRegistro
-    }).subscribe(
-      (registroCreado)=>{
-        console.log('registroCreado');
-        console.log(registroCreado);
-        alert(JSON.stringify(registroCreado));
-      }
-    )
+    
   }
 
   obtenerFormulario(formulario) {

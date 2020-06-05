@@ -1,1 +1,38 @@
-<p>listar works!</p>
+<div class="container">
+    <div class="row">
+        <table class="table">
+            <thead class="thead-dark bg-warning">
+                <tr>
+                    <th scope="col">CÉDULA</th>
+                    <th scope="col">NOMBRES</th>
+                    <th scope="col">APELLIDOS</th>
+                    <th scope="col">DIRECCION</th>
+                    <th scope="col">CORREO</th>
+                    <th scope="col">CELULAR</th>
+                    <th scope="col">TELÉFONO CONVENCIONAL</th>
+                    <th scope="col">ACCION</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of registros">
+                    <td>{{item.cedula}}</td>
+                    <td>{{item.nombres}}</td>
+                    <td>{{item.apellidos}}</td>
+                    <td>{{item.direccion}}</td>
+                    <td>{{item.correo}}</td>
+                    <td>{{item.telefono1}}</td>
+                    <td>{{item.telefono2}}</td>
+                    <td>{{item.id}} 
+                        <!-- <div class="buttons">
+                            <div class="buttons_container"> -->
+                                <div class="button button_color_1 text-center trans_200"><a [routerLink]="['/registro',item.id,'editar']">EDITAR</a></div>
+                                <div class="button button_color_2 text-center trans_200"><a >ELIMINAR</a></div>
+                            <!-- </div>
+                        </div> -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
