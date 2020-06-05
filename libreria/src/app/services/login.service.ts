@@ -23,9 +23,21 @@ export class LoginService {
         return this._httpClient.delete(url);
     }
 
-    crearCredenciales(datosCredencialesCrear){
+    crearRegistro(datosRegistroCrear){
         const url = 'http://localhost:1337/registro';
+        return this._httpClient.post(url,datosRegistroCrear);
+    }
+    crearCredenciales(datosCredencialesCrear){
+        const url = 'http://localhost:1337/ingreso';
         return this._httpClient.post(url,datosCredencialesCrear);
+    }
+    editarRegistro(datosRegistroCrear){
+        const url = 'http://localhost:1337/registro';
+        return this._httpClient.put(url,datosRegistroCrear);
+    }
+    editarCredenciales(datosCredencialesCrear){
+        const url = 'http://localhost:1337/ingreso';
+        return this._httpClient.put(url,datosCredencialesCrear);
     }
 
     }

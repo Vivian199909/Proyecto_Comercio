@@ -30,16 +30,58 @@
                     <div class="search_content text-center">
                         <h1 class="search_title registro">REGISTRARSE</h1>
                         <form id="search_form" class="search_form" (ngSubmit)="obtenerFormulario(formularioUsuario)" #formularioUsuario="ngForm">
-                          <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Nro de cédula" required="required" data-error="Cédula obligatoria.">
-                          <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Nombres" required="required" data-error="Nombres obligatorio.">
-                          <input id="search_form_category" class="input_field search_form_category" type="text" placeholder="Apellidos" required="required" data-error="Apellidos obligatorio.">
-                          <input id="search_form_degree" class="input_field search_form_degree" type="text" placeholder="Dirección" required="required" data-error="Dirección obligatorio.">
-                          <input id="search_form_name" class="input_field search_form_name" type="email" placeholder="Correo" required="required" data-error="Correo obligatorio.">
-                          <input id="search_form_category" class="input_field search_form_category" type="text" placeholder="Número de Celular" required="required" data-error="Celular olbigatorio.">
-                          <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Número Convencional" required="required" data-error="Teléfono convencional obligatorio.">
-                          <input id="search_form_category" class="input_field search_form_category" type="password" placeholder="Contraseña"required="required" data-error="Contrasenia obligatorio.">
-                          <input id="search_form_category" class="input_field search_form_category" type="password" placeholder="Repetir la Contraseña"required="required" data-error="Contrasenia obligatorio.">
-                          <button id="search_submit_button" type="submit" class="search_submit_button trans_200" value="Submit" (click)='ingresar()'>REGISTRARSE</button>
+                            
+                            <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Nro de cédula" required="required" data-error="Cédula obligatoria." 
+                            [(ngModel)]="cedula"
+                            name="cedula"
+                            minlength="10"
+                            #campoCedula="ngModel">
+                            <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Nombres" required="required" data-error="Nombres obligatorio."
+                            [(ngModel)]="nombres"
+                            name="nombres"
+                            minlength="3"
+                            #campoNombres="ngModel">
+                            <input id="search_form_category" class="input_field search_form_category" type="text" placeholder="Apellidos" required="required" data-error="Apellidos obligatorio."
+                            [(ngModel)]="apellidos"
+                            name="apellidos"
+                            minlength="3"
+                            #campoApellido="ngModel">
+                            <input id="search_form_degree" class="input_field search_form_degree" type="text" placeholder="Dirección" required="required" data-error="Dirección obligatorio."
+                            [(ngModel)]="direccion"
+                            name="direccion"
+                            minlength="3"
+                            #campoDireccion="ngModel">
+                            <input id="search_form_name" class="input_field search_form_name" type="email" placeholder="Correo" required="required" data-error="Correo obligatorio."
+                            [(ngModel)]="correo"
+                            name="correo"
+                            minlength="3"
+                            #campoCorreo="ngModel">
+                            <input id="search_form_category" class="input_field search_form_category" type="text" placeholder="Número de Celular" required="required" data-error="Celular olbigatorio."
+                            [(ngModel)]="telefono1"
+                            name="telefono1"
+                            minlength="3"
+                            #campoCelular="ngModel">
+                            <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Número Convencional" required="required" data-error="Teléfono convencional obligatorio."
+                            [(ngModel)]="telefono2"
+                            name="telefono2"
+                            minlength="3"
+                            #campoConvencional="ngModel">
+                            <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Usuario" required="required" data-error="Es obligatorio el usuario." 
+                            [(ngModel)]="usuario"
+                            name="usuario"
+                            minlength="10"
+                            #campoUsuario="ngModel">
+                            <input id="search_form_category" class="input_field search_form_category" type="password" placeholder="Contraseña"required="required" data-error="Contrasenia obligatorio."
+                            [(ngModel)]="pass"
+                            name="pass"
+                            minlength="3"
+                            #campoContrasenia="ngModel">
+                            <input id="search_form_category" class="input_field search_form_category" type="password" placeholder="Repetir la Contraseña"required="required" data-error="Contrasenia obligatorio."
+                            [(ngModel)]="passr"
+                            name="pass"
+                            minlength="3"
+                            #campoRContrasenia="ngModel">
+                            <button id="search_submit_button" type="submit" class="search_submit_button trans_200" value="Submit" (click)='ingresar()'>REGISTRARSE</button>
                         </form>
                     </div>
                 </div>

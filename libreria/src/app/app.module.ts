@@ -10,7 +10,7 @@ import { MenuComponent } from './menu/menu.component';
 import { PerfilModule } from './perfil/perfil.module';
 import { HttpClientModule } from "@angular/common/http";
 import { LoginService } from './services/login.service';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +24,8 @@ import { LoginService } from './services/login.service';
     AppRoutesComponent,
     RegistroModule,
     PerfilModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     LoginService

@@ -13,7 +13,7 @@ const routes: Routes = [
     component: CrearComponent
   },
   {
-    path: 'editar',
+    path: ':id/editar',
     component: EditarComponent
   }
 
