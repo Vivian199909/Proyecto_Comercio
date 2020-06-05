@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  arregloMenu=[{nombre:'INICIO',url:''},{nombre:'CONTACTO',url:''},{nombre:'INICIAR SESIÓN',url:''},{nombre:'REGISTRARSE',url:''}]
+  arregloMenu=[{nombre:'INICIO',url:''},{nombre:'CONTACTO',url:''},{nombre:'INICIAR SESIÓN',url:''},{nombre:'REGISTRARSE',url:'/registro/crear'}]
   constructor() { }
-  
+
   ngOnInit(): void {
   }
 

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 const rutas: Routes=[
     {
@@ -22,6 +23,10 @@ const rutas: Routes=[
       loadChildren: ()=>import('./perfil/perfil.module')
       .then(perfil=>perfil.PerfilModule)
     },
+    {
+      path:"login",
+      component: LoginComponent,
+    }
 ]
 @NgModule({
     imports: [RouterModule.forRoot(rutas)],

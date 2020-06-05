@@ -1,1 +1,90 @@
-<p>login works!</p>
+    <!-- Register -->
+
+    <div class="register">
+
+      <div class="container-fluid">
+
+          <div class="row row-eq-height">
+              <div class="col-lg-6 nopadding">
+
+                  <!-- Register -->
+
+                  <div class="register_section d-flex flex-column align-items-center justify-content-center">
+
+                      <div class="register_content text-center">
+                          <h1 class="register_title"><span></span> </h1>
+                          <p class="register_text"></p>
+                          <img class='fondoRegistro' src="assets/images/gatoBook.jpg" alt="">
+
+                      </div>
+                  </div>
+
+              </div>
+
+              <div class="col-lg-6 nopadding">
+
+                  <!-- Search -->
+
+                  <div class="search_section d-flex flex-column align-items-center justify-content-center">
+                      <div class="search_background" style="background-image:url(assets/images/search_background.jpg);"></div>
+                      <div class="search_content text-center">
+                          <h1 class="search_title registro">INICIAR SESIÓN</h1>
+                          <form id="search_form" class="search_form" (ngSubmit)="obtenerFormulario(formularioUsuario)" #formularioUsuario="ngForm">
+                              <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Usuario" required="required" data-error="Es obligatorio el usuario."
+                              [(ngModel)]="usuario"
+                              name="usuario"
+                              minlength="4"
+                              maxlength="15"
+                              #campoUsuario="ngModel">
+                              <div
+                              class="alert alert-danger"
+                              role="alert"
+                              *ngIf="(campoUsuario.errors)
+                              && campoUsuario.dirty === true">
+                              <p
+                              *ngIf="campoUsuario.errors.required">
+                                  Campo usuario requerido
+                              </p>
+                              <p
+                              *ngIf="campoUsuario.errors.minlength">
+                                  Error ingrese mínimo 10 dígitos
+                              </p>
+                              <p
+                              *ngIf="campoUsuario.errors.pattern">
+                                  No es usuraio
+                                  </p>
+
+                          </div>
+                          <input id="search_form_category" class="input_field search_form_category" type="password" placeholder="Contraseña"required="required" data-error="Contrasenia obligatorio."
+                          [(ngModel)]="pass"
+                          name="pass"
+                          minlength="3"
+                          maxlength="15"
+                          #campoContrasenia="ngModel">
+                          <div
+                          class="alert alert-danger"
+                          role="alert"
+                          *ngIf="(campoContrasenia.errors)
+                          && campoContrasenia.dirty === true">
+                              <p
+                            *ngIf="campoContrasenia.errors.required">
+                              Campo contaseña requerido
+                              </p>
+                              <p
+                            *ngIf="campoContrasenia.errors.minlength">
+                              Error ingrese mínimo 10 dígitos
+                              </p>
+                              <p
+                            *ngIf="campoContrasenia.errors.pattern">
+                              No es contraseña
+                              </p>
+                          </div>
+                          <button id="search_submit_button" type="submit" class="search_submit_button trans_200" value="Submit"[disabled]="formularioUsuario.invalid" (click)='iniciarSesion()'>INICIAR SESIÓN</button>
+                          <button id="search_submit_button" class="button button_color_2 text-center trans_200 search_submit_button" [routerLink]="['/registro','crear']">REGISTRARSE</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

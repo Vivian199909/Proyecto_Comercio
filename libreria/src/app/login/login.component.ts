@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  usuario='';
+  pass='';
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  iniciarSesion(){
+
+  }
+
+  obtenerFormulario(formulario) {
+    console.log(formulario);
+    /* alert(
+      'correo: ' +
+        formulario.controls.email.value +
+        'password: ' +
+        formulario.controls.pass.value
+    ); */
+  }
 }

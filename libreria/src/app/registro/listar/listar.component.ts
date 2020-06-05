@@ -26,10 +26,28 @@ export class ListarComponent implements OnInit {
           console.log(resultadoMetodoGet);
           this.registros=resultadoMetodoGet
         })
-        
+
       }
     )
+  }
 
+  eliminar(idRegistro,idIngreso){
+    this._loginService
+    .metodoDelete('http://localhost:1337/registro/'+idRegistro)
+    .subscribe(
+      (resultadoDelete)=>{
+        console.log('respuesta de delete registro');
+        console.log(resultadoDelete);
+        this._loginService
+        .metodoDelete('http://localhost:1337/ingreso/'+idIngreso)
+        .subscribe(
+          (resultadoDelete)=>{
+            console.log('respuesta de delete ingreso');
+            console.log(resultadoDelete);
+          }
+        )
+      }
+    )
   }
 
 }

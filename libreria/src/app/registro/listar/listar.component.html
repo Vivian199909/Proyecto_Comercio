@@ -1,5 +1,6 @@
 <div class="container">
     <div class="row">
+      <div class="button button_color_1 text-center trans_200 crearButton"><a [routerLink]="['/registro','crear']">NUEVO</a></div>
         <table class="table">
             <thead class="thead-dark bg-warning">
                 <tr>
@@ -11,7 +12,7 @@
                     <th scope="col">CELULAR</th>
                     <th scope="col">TELÉFONO CONVENCIONAL</th>
                     <th scope="col">ACCION</th>
-                    
+
                 </tr>
             </thead>
             <tbody>
@@ -23,13 +24,9 @@
                     <td>{{item.correo}}</td>
                     <td>{{item.telefono1}}</td>
                     <td>{{item.telefono2}}</td>
-                    <td>{{item.id}} 
-                        <!-- <div class="buttons">
-                            <div class="buttons_container"> -->
-                                <div class="button button_color_1 text-center trans_200"><a [routerLink]="['/registro',item.id,'editar']">EDITAR</a></div>
-                                <div class="button button_color_2 text-center trans_200"><a >ELIMINAR</a></div>
-                            <!-- </div>
-                        </div> -->
+                    <td>
+                      <div class="button button_color_1 text-center trans_200"><a [routerLink]="['/registro',item.id,'editar']">EDITAR</a></div>
+                      <div class="button button_color_2 text-center trans_200"><a (click)='eliminar(item.id,item.ingresos[0].id)'>ELIMINAR</a></div>
                     </td>
                 </tr>
             </tbody>
