@@ -44,6 +44,7 @@ export class ListarComponent implements OnInit {
           (resultadoDelete)=>{
             console.log('respuesta de delete ingreso');
             console.log(resultadoDelete);
+            window.location.reload();
           }
         )
       }
