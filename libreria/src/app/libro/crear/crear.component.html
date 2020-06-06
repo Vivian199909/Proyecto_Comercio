@@ -1,1 +1,145 @@
-<p>crear works!</p>
+    <!-- Register -->
+
+    <div class="register">
+
+      <div class="container-fluid">
+
+          <div class="row row-eq-height">
+              <div class="col-lg-6 nopadding">
+                <img class='fondoRegistro' src="assets/images/oscurogato.jpg" alt="">
+              </div>
+              <div class="col-lg-6 nopadding">
+                  <!-- Search -->
+                  <div class="search_section d-flex flex-column align-items-center justify-content-center">
+                      <div class="search_background" style="background-image:url(assets/images/search_background.jpg);"></div>
+                      <div class="search_content text-center">
+                          <h1 class="search_title registro">REGISTRO DE LIBROS</h1>
+                          <form id="search_form" class="search_form" (ngSubmit)="obtenerFormulario(formularioUsuario)" #formularioUsuario="ngForm">
+                            <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Título" required="required" data-error="Es obligatorio el título."
+                            [(ngModel)]="nombreProducto"
+                            name="nombreProducto"
+                            minlength="4"
+                            maxlength="50"
+                            #campoNombreProducto="ngModel">
+                              <div
+                              class="alert alert-danger"
+                              role="alert"
+                              *ngIf="(campoNombreProducto.errors)
+                              && campoNombreProducto.dirty === true">
+                                <p
+                                *ngIf="campoNombreProducto.errors.required">
+                                    Título requerido
+                                </p>
+                                <p
+                                *ngIf="campoNombreProducto.errors.minlength">
+                                    Error ingrese mínimo 4 carácteres
+                                </p>
+                                <p
+                                *ngIf="campoNombreProducto.errors.pattern">
+                                  No es título
+                                </p>
+                              </div>
+                          <input id="search_form_category" class="input_field search_form_category" type="number" placeholder="Número de página" required="required" data-error="Campo obligatorio."
+                          [(ngModel)]="numPaginas"
+                          name="numPaginas"
+                          min="1"
+                          max="9999"
+                          #campoNumPaginas="ngModel">
+                          <div
+                          class="alert alert-danger"
+                          role="alert"
+                          *ngIf="(campoNumPaginas.errors)
+                          && campoNumPaginas.dirty === true">
+                              <p
+                              *ngIf="campoNumPaginas.errors.required">
+                              Número de páginas requerido
+                              </p>
+                              <p
+                              *ngIf="campoNumPaginas.errors.min">
+                              Error ingrese mímimo 1
+                              </p>
+                              <p
+                              *ngIf="campoNumPaginas.errors.pattern">
+                              No es número
+                              </p>
+                          </div>
+                          <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Tamaño" required="required" data-error="Es obligatorio el tamaño."
+                            [(ngModel)]="tamanio"
+                            name="tamanio"
+                            minlength="1"
+                            maxlength="15"
+                            #campoTamanio="ngModel">
+                              <div
+                              class="alert alert-danger"
+                              role="alert"
+                              *ngIf="(campoTamanio.errors)
+                              && campoTamanio.dirty === true">
+                                <p
+                                *ngIf="campoTamanio.errors.required">
+                                    Tamaño requerido
+                                </p>
+                                <p
+                                *ngIf="campoTamanio.errors.minlength">
+                                    Error ingrese mínimo 4 carácteres
+                                </p>
+                                <p
+                                *ngIf="campoTamanio.errors.pattern">
+                                  No es tamaño
+                                </p>
+                              </div>
+                          <input id="search_form_category" class="input_field search_form_category" type="number" placeholder="Precio" required="required" data-error="Campo obligatorio."
+                          [(ngModel)]="precio"
+                          name="precio"
+                          min="0"
+                          max="9999"
+                          #campoPrecio="ngModel">
+                          <div
+                          class="alert alert-danger"
+                          role="alert"
+                          *ngIf="(campoPrecio.errors)
+                          && campoPrecio.dirty === true">
+                              <p
+                              *ngIf="campoPrecio.errors.required">
+                              Precio requerido
+                              </p>
+                              <p
+                              *ngIf="campoPrecio.errors.min">
+                              No es posible número negativo
+                              </p>
+                              <p
+                              *ngIf="campoPrecio.errors.pattern">
+                              No es número
+                              </p>
+                          </div>
+                          <input id="search_form_category" class="input_field search_form_category" type="number" placeholder="Stock" required="required" data-error="Campo obligatorio."
+                          [(ngModel)]="stock"
+                          name="stock"
+                          min="0"
+                          max="9999"
+                          #campoStock="ngModel">
+                          <div
+                          class="alert alert-danger"
+                          role="alert"
+                          *ngIf="(campoStock.errors)
+                          && campoStock.dirty === true">
+                              <p
+                              *ngIf="campoStock.errors.required">
+                              Stock requerido
+                              </p>
+                              <p
+                              *ngIf="campoStock.errors.min">
+                              Error ingrese mímimo 1
+                              </p>
+                              <p
+                              *ngIf="campoStock.errors.pattern">
+                              No es número
+                              </p>
+                          </div>
+                          <button id="search_submit_button" type="submit" class="search_submit_button trans_200" value="Submit"[disabled]="formularioUsuario.invalid" (click)='ingresar()'>REGISTRAR LIBRO </button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

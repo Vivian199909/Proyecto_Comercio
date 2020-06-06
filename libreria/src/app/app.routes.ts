@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
 
 const rutas: Routes=[
     {
@@ -24,8 +25,17 @@ const rutas: Routes=[
       .then(perfil=>perfil.PerfilModule)
     },
     {
+      path: 'libro',
+      loadChildren: ()=>import('./libro/libro.module')
+      .then(libro=>libro.LibroModule)
+    },
+    {
       path:"login",
       component: LoginComponent,
+    },
+    {
+      path: '**',
+      component:NoEncontradoComponent
     }
 ]
 @NgModule({

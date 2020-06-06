@@ -30,8 +30,8 @@
                         <div class="search_content text-center">
                             <h1 class="search_title registro">REGISTRARSE</h1>
                             <form id="search_form" class="search_form" (ngSubmit)="obtenerFormulario(formularioUsuario)" #formularioUsuario="ngForm">
-                                
-                                <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Nro de cédula" required="required" data-error="Cédula obligatoria." 
+
+                                <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="N° Cédula" required="required" data-error="Cédula obligatoria."
                                 [(ngModel)]="cedula"
                                 name="cedula"
                                 pattern="^[0-9]+$"
@@ -55,7 +55,7 @@
                                 *ngIf="campoCedula.errors.pattern">
                                     No es cedula
                                 </p>
-                            
+
                                 </div>
                                 <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Nombres" required="required" data-error="Nombres obligatorio."
                                 [(ngModel)]="nombres"
@@ -80,7 +80,7 @@
                                 *ngIf="campoNombres.errors.pattern">
                                     No es nombre
                                 </p>
-                            
+
                                 </div>
                                 <input id="search_form_category" class="input_field search_form_category" type="text" placeholder="Apellidos" required="required" data-error="Apellidos obligatorio."
                                 [(ngModel)]="apellidos"
@@ -105,7 +105,7 @@
                                 *ngIf="campoApellido.errors.pattern">
                                     No es apellido
                                 </p>
-                            
+
                                 </div>
                                 <input id="search_form_degree" class="input_field search_form_degree" type="text" placeholder="Dirección" required="required" data-error="Dirección obligatorio."
                                 [(ngModel)]="direccion"
@@ -131,7 +131,7 @@
                                 *ngIf="campoDireccion.errors.pattern">
                                     No es direccion
                                 </p>
-                            
+
                                 </div>
                                 <input id="search_form_name" class="input_field search_form_name" type="email" placeholder="Correo" required="required" data-error="Correo obligatorio."
                                 [(ngModel)]="correo"
@@ -157,7 +157,7 @@
                                 *ngIf="campoCorreo.errors.pattern">
                                     No es correo
                                 </p>
-                            
+
                                 </div>
                                 <input id="search_form_category" class="input_field search_form_category" type="text" placeholder="Número de Celular" required="required" data-error="Celular olbigatorio."
                                 [(ngModel)]="telefono1"
@@ -178,12 +178,12 @@
                                 <p
                                 *ngIf="campoCelular.errors.minlength">
                                     Error ingrese mínimo 10 dígitos
-                                </p> 
+                                </p>
                                 <p
                                 *ngIf="campoCelular.errors.pattern">
                                     No es celular
                                 </p>
-                            
+
                                 </div>
                                 <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Número Convencional" required="required" data-error="Teléfono convencional obligatorio."
                                 [(ngModel)]="telefono2"
@@ -207,11 +207,11 @@
                                 </p>
                                 <p
                                 *ngIf="campoConvencional.errors.pattern">
-                                    No es numero convencional 
+                                    No es numero convencional
                                 </p>
-                            
+
                                 </div>
-                                <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Usuario" required="required" data-error="Es obligatorio el usuario." 
+                                <input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Usuario" required="required" data-error="Es obligatorio el usuario."
                                 [(ngModel)]="usuario"
                                 name="usuario"
                                 minlength="4"
@@ -234,7 +234,7 @@
                                 *ngIf="campoUsuario.errors.pattern">
                                     No es usuraio
                                     </p>
-                        
+
                             </div>
                             <input id="search_form_category" class="input_field search_form_category" type="password" placeholder="Contraseña"required="required" data-error="Contrasenia obligatorio."
                             [(ngModel)]="pass"
@@ -259,7 +259,7 @@
                               *ngIf="campoContrasenia.errors.pattern">
                                 No es contrasenia
                                 </p>
-                        
+
                             </div>
                             <input id="search_form_category" class="input_field search_form_category" type="password" placeholder="Repetir la Contraseña"required="required" data-error="Contrasenia obligatorio."
                             [(ngModel)]="passr"
@@ -275,8 +275,8 @@
                                 <p>
                                 Las contraseñas no son iguales
                                 </p>
-                        
-                        
+
+
                             </div>
                             <button id="search_submit_button" type="submit" class="search_submit_button trans_200" value="Submit"[disabled]="formularioUsuario.invalid" (click)='ingresar()'>REGISTRARSE</button>
                         </form>

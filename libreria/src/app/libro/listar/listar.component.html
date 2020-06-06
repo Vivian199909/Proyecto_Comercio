@@ -1,1 +1,40 @@
-<p>listar works!</p>
+<div class="popular page_section">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="section_title text-center">
+          <h1>Tienda de libros</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="button button_color_1 text-center trans_200 crearButton"><a [routerLink]="['/libro','crear']">NUEVO</a></div>
+
+    <div class="row course_boxes">
+
+      <!-- Popular Course Item -->
+      <div class="col-lg-4 course_box" *ngFor="let item of registros">
+        <div class="card">
+          <img class="card-img-top" src="assets/images/course_6.jpg" alt="libro">
+          <div class="card-body text-center">
+            <div class="card-title"><a href="courses.html">{{item.nombreProducto}}</a></div>
+            <div class="card-text">N° Páginas: {{item.numPaginas}}
+              <button class="btn btn-success">Comprar</button>
+            </div>
+          </div>
+          <div class="card-body text-center">
+            <button class="btn btn-warning" [routerLink]="['/libro',item.id,'editar']">Editar</button>
+            <button class="btn btn-danger" (click)='eliminar(item.id)'>Eliminar</button>
+          </div>
+          <div class="price_box d-flex flex-row align-items-center">
+            <div class="course_author_image">
+              <img src="assets/images/author.jpg" alt="libro">
+            </div>
+            <div class="course_author_name">Tamaño: {{item.tamanio}} <span>Stock: {{item.stock}}</span></div>
+            <div class="course_price d-flex flex-column align-items-center justify-content-center"><span>${{item.precio}}</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

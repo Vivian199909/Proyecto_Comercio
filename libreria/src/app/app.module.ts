@@ -11,13 +11,15 @@ import { PerfilModule } from './perfil/perfil.module';
 import { HttpClientModule } from "@angular/common/http";
 import { LoginService } from './services/login.service';
 import { FormsModule } from '@angular/forms';
+import { CarritoComponent } from './carrito/carrito.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
     NoEncontradoComponent,
-    MenuComponent
+    MenuComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { ActivatedRoute } from '@angular/router';
-import { EACCES } from 'constants';
 
 @Component({
   selector: 'app-login',
@@ -24,19 +23,17 @@ export class LoginComponent implements OnInit {
     this._loginService.metodoGet('http://localhost:1337/ingreso/')
     .subscribe((resultadoParametro)=>{
 
-      console.log(resultadoParametro);
+      //console.log(resultadoParametro);
       var rest=JSON.stringify(resultadoParametro)
-      for (let index = 0; index < resultadoParametro.length; index++) {
-        
-        if (this.usuario===resultadoParametro[index]["usuario"]) {
-          if (this.pass===resultadoParametro[index]["clave"]) {
+      for(let key in resultadoParametro){
+        if (this.usuario===resultadoParametro[key]["usuario"]) {
+          if (this.pass===resultadoParametro[key]["clave"]) {
             this.band=true;
             alert("login existoso");
 
           }
         }
       }
-      
     })
   }
 
