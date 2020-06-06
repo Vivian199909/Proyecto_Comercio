@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../services/login.service';
 import {NgForm} from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-crear',
   templateUrl: './crear.component.html',
@@ -21,6 +22,7 @@ export class CrearComponent implements OnInit {
   idRegistro='';
   constructor(
     private readonly _loginService: LoginService,
+    private readonly _router: Router
   ) { }
 
   ngOnInit(): void {
@@ -42,7 +44,7 @@ export class CrearComponent implements OnInit {
         console.log('registroCreado');
         console.log(registroCreado);
         alert(JSON.stringify(registroCreado['id']));
-        
+
         this.idRegistro=JSON.stringify(registroCreado['id']);
         alert(this.idRegistro)
         this._loginService.crearCredenciales({
@@ -54,11 +56,12 @@ export class CrearComponent implements OnInit {
             console.log('registroCreado');
             console.log(registroCreado);
             alert(JSON.stringify(registroCreado));
+            this._router.navigate(['login/']);
           }
         )
       }
     )
-    
+
   }
 
   obtenerFormulario(formulario) {

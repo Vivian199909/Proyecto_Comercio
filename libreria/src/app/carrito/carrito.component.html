@@ -1,1 +1,32 @@
-<p>carrito works!</p>
+<div class="container">
+  <div class="row">
+    <div class="button button_color_1 text-center trans_200 regresarButton"><a [routerLink]="['/libro','listar']">Regresar</a></div>
+      <table class="table">
+          <thead class="thead-dark bg-warning">
+              <tr>
+                  <th scope="col">N°</th>
+                  <th scope="col">TÍTULO</th>
+                  <th scope="col">CANTIDAD</th>
+                  <th scope="col">P. UNIT</th>
+                  <th scope="col">P. TOTAL</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let item of registros[0].detallesOrden">
+                  <td>{{item.createdAt}}</td>
+                  <td>{{item.titulo}}</td>
+                  <td>{{item.cantidad}}</td>
+                  <td>{{item.precio}}</td>
+                  <td>{{item.cantidad*item.precio}}</td>
+
+              </tr>
+              <tr>
+                <td colspan="3"></td>
+                <td>TOTAL</td>
+                <td>${{total}}</td>
+              </tr>
+          </tbody>
+      </table>
+      <!-- <div class="button button_color_1 text-center trans_200"><a (click)="comprar()">COMPRAR</a></div> -->
+  </div>
+</div>

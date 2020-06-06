@@ -21,6 +21,9 @@ module.exports = {
     idEmpresa:{
       model:'empresa'
     },
+    comprado:{
+      type:'boolean'
+    },
     detallesOrden:{
       collection:'detalleOrden',
       via:'idOrden'

@@ -15,8 +15,9 @@
 				<div class="main_nav">
 					<ul class="main_nav_list">
 						<li class="main_nav_item" *ngFor="let item of arregloMenu">
-                            <a href="{{item.url}}">{{item.nombre}}</a>
-                        </li>
+              <a *ngIf="(item.url==='/logout');else elseBlock" href="" (click)="logout()">{{item.nombre}}</a>
+              <ng-template #elseBlock><a href="{{item.url}}">{{item.nombre}}</a></ng-template>
+            </li>
 					</ul>
 				</div>
 			</nav>
