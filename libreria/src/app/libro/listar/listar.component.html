@@ -8,7 +8,7 @@
       </div>
     </div>
 
-    <div class="button button_color_1 text-center trans_200 crearButton"><a [routerLink]="['/libro','crear']">NUEVO</a></div>
+    <div class="button button_color_1 text-center trans_200 crearButton" *ngIf="idPerfil===2"><a [routerLink]="['/libro','crear']">NUEVO</a></div>
 
     <div class="row course_boxes">
 
