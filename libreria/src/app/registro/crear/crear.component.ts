@@ -56,7 +56,14 @@ export class CrearComponent implements OnInit {
             console.log('registroCreado');
             console.log(registroCreado);
             alert(JSON.stringify(registroCreado));
-            this._router.navigate(['login/']);
+            const valorLocal = JSON.parse(localStorage.getItem('idPerfil'));
+            if(valorLocal!==null && valorLocal.idPerfil===2){
+              this._router.navigate(['registro/listar']);
+
+            }else{
+              this._router.navigate(['login/']);
+            }
+
           }
         )
       }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../services/login.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-editar',
   templateUrl: './editar.component.html',
@@ -23,7 +23,8 @@ export class EditarComponent implements OnInit {
   idIngreso='';
   constructor(
     private readonly _loginService: LoginService,
-    private readonly _activatedRoute: ActivatedRoute
+    private readonly _activatedRoute: ActivatedRoute,
+    private readonly _router: Router
   ) { }
 
   ngOnInit(): void {
@@ -49,7 +50,7 @@ export class EditarComponent implements OnInit {
           this.pass=resultadoMetodoGet['ingresos']['0']['clave'];
           this.idIngreso=resultadoMetodoGet['ingresos']['0']['id'];
         })
-        
+
       }
     )
 
@@ -70,8 +71,8 @@ export class EditarComponent implements OnInit {
       (registroCreado)=>{
         console.log('registroCreado');
         console.log(registroCreado);
-        alert(JSON.stringify(registroCreado['id']));
-        
+        //alert(JSON.stringify(registroCreado['id']));
+
         this.idRegistro=JSON.stringify(registroCreado['id']);
       }
     )
@@ -83,7 +84,8 @@ export class EditarComponent implements OnInit {
       (registroCreado)=>{
         console.log('registroCreado');
         console.log(registroCreado);
-        alert(JSON.stringify(registroCreado));
+        //alert(JSON.stringify(registroCreado));
+        this._router.navigate(['registro/listar']);
       }
     )
   }
